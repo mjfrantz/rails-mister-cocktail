@@ -1,11 +1,13 @@
-<h1>Cocktails#new</h1>
-<p>Find me in app/views/cocktails/new.html.erb</p>
+<h1>New Cocktail</h1>
+
+<%= link_to 'Home', cocktails_path %>
 
 <div class="container">
-<%= simple_form_for @cocktail do |f| %>
-    <%= f.input :name%>
-    <%= f.submit "submit"%>
-<% end %>
+        <div class>
+    <%= simple_form_for @cocktail do |f| %>
+        <%= f.input :name %>
+        <%= f.submit :submit, class: "btn btn-primary text-center" %>
+    <% end %>
 </div>
 
 
