@@ -1,26 +1,32 @@
-
-<%= link_to "Make a new cocktail", new_cocktail_path %>
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://unsplash.com/photos/m8crKH1iN_8')">
+<div class="banner"
+  style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1495808921907-1599ab4d6801?ixlib=rb-1.2.1&auto=format&fit=crop&w=2706&q=80')">
   <div class="container">
     <h1>Welcome to Mike's Bar</h1>
     <p>Enjoy some of the best cocktails</p>
+    <%= link_to "Make a new cocktail", new_cocktail_path, class: "btn btn-primary" %>
   </div>
 </div>
 
 <div class="cocktail-description">
-  <% @cocktails.each do |cocktail| %>
-      <div class="row">
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-            url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
-            <div class="card-category">Yummy</div>
-              <div class="card-description">
-                <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
-              </div>
+  <h1 class="main-title">Yummy Cocktails</h1>
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+              url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+          <div class="card-category">
+            <div class="card-description">
+              <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
             </div>
           </div>
-        </div>  
-    <% end %>  
+        </div>
+      </div>
+
+      <% end %>
+    </div>
+
+  </div>
+
 </div>
-  
