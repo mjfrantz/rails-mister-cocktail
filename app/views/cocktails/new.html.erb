@@ -3,7 +3,6 @@
 <%= link_to 'Home', cocktails_path %>
 
 <div class="container">
-        <div class>
     <%= simple_form_for @cocktail do |f| %>
         <%= f.input :name %>
          <%= f.input :photo %>
@@ -11,7 +10,3 @@
         <%= f.submit :submit, class: "btn btn-primary text-center" %>
     <% end %>
 </div>
-
-
-
-
